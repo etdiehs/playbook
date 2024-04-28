@@ -13,5 +13,8 @@
       register: apt_update_status
 
     - name: Remove packages not needed anymore
+      become: yes
+      become_user: root
+      become_method: su
       apt:
         autoremove: yes

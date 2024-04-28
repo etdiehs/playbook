@@ -1,11 +1,10 @@
 ---
 - hosts: all
   tasks:
-  become: yes
-  become_user: root
-  become_method: su
-
     - name: Update all installed packages using APT module
+      become: yes
+      become_user: root
+      become_method: su
       apt:
         name: '*'
         state: latest

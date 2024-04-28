@@ -1,11 +1,17 @@
 ---
 - hosts: all
+  
+  vars:
+    ansible_become_timeout: 60
+  
   tasks:
     - name: Update all installed packages using APT module
-      become: yes
+     
+      become: true
       become_user: root
       become_method: su
       become_exe: sudo su -
+      
       apt:
         name: '*'
         state: latest
@@ -14,9 +20,11 @@
       register: apt_update_status
 
     - name: Remove packages not needed anymore
-      become: yes
+      
+      become: true
       become_user: root
       become_method: su
       become_exe: sudo su -
+      
       apt:
         autoremove: yes

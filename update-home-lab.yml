@@ -8,7 +8,7 @@
     - name: Update all installed packages using APT module
      
       become: true
-      become_user: root
+      become_user: msc
       become_method: su
       become_exe: sudo su -
       
@@ -22,7 +22,7 @@
     - name: Remove packages not needed anymore
       
       become: true
-      become_user: root
+      become_user: msc
       become_method: su
       become_exe: sudo su -
       

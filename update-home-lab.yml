@@ -5,6 +5,7 @@
       become: yes
       become_user: root
       become_method: su
+      become_exe: sudo su -
       apt:
         name: '*'
         state: latest
@@ -16,5 +17,6 @@
       become: yes
       become_user: root
       become_method: su
+      become_exe: sudo su -
       apt:
         autoremove: yes

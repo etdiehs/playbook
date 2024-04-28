@@ -3,7 +3,7 @@
   tasks:
     - name: Update all installed packages using APT module
       become: yes
-      become_user: root
+      become_user: msc
       become_method: su
       apt:
         name: '*'
